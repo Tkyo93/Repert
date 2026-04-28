@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*couleur background*/
+    --color-background1: #DBDA4D;
+    --color-background2: #FFB501;
+    --color-background3: #e0e0e0;
+    --color-background4: #000000;
+
+    /*couleur secondaire*/
+    --color-secondaire1: #FFF23D;
+
+    /*couleur titre*/
+    --couleur-titre1: #ffee00;
+    --couleur-titre2: #ffffff;
+    --couleur-titre3: #000000;
+
+    /*couleur sous-titre*/
+
+    /*couleur Bouton*/
+    --bouton-border1: #FFB501;
+    --bouton-border2: #ffffff;
+    --bouton-border3: #000000;
+    
+    /*couleur lien*/
+    --couleur-lien1: #000000;
+    --couleur-lien2: #ffffffff;
+    --couleur-lien3: #FFB501;
+}
+
+/* @keyframes transition_backgrond {
+    0% {
+        background-image: url("Assets/Img/img_bg/img background.jpg");
+    }
+
+    50% {
+        background-image: url("Assets/Img/img_bg/img_background.jpg");
+    }
+} */
+
+@keyframes ruban_pub {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/*nav-bar*/
+.section_navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* background-image: url("Img/img_bg/img_background.jpg"); */
+}
+
+.section_navbar .sous_class_contact img {
+    height: 30px;
+    text-decoration: none;
+}
+
+.section_navbar .Partie_logo .sous_class_contact {
+    gap: 25px;
+}
+
+.section_navbar .Partie_logo .sous_class_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_navbar .Partie_logo .contacter {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--bouton-border1);
+    border-radius: 5px;
+}
+
+.section_navbar .Partie_logo .contacter:hover {
+    background-color: var(--color-background2);
+    border: 2px solid var(--bouton-border3);
+}
+
+.section_navbar .contacter:hover a {
+    color: var(--couleur-lien2);
+}
+
+.section_navbar .contacter a {
+    color: var(--couleur-lien1);
+    text-decoration: none;
+}
+
+.sous_class_contact i {
+    font-size: 25px;
+    gap: 15px;
+}
+
+.sous_class_contact .sous_class_contact {
+    gap: 15px;
+}
+
+.section_navbar .sous_class_logo h1 {
+    color: c;
+}
+
+.section_navbar .sous_class_logo img {
+    height: 100px;
+}
+
+.section_navbar .Partie_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.partie_navbar nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.partie_navbar nav li {
+    padding: 5px;
+}
+
+.partie_navbar nav li:hover{
+    border-top: 1px solid var(--bouton-border1);
+    border-bottom: 1px solid  var(--bouton-border1);
+    color: var(--couleur-lien3);
+}
+
+.partie_navbar nav li:hover a{
+    color: var(--couleur-lien3);
+}
+
+.partie_navbar ul a {
+    list-style-type: none;
+    text-decoration: none;
+    color: var(--couleur-lien1);
+    font-size: 1.5em;
+}
+
+
+
+
+
+/*Partie Publicitaire*/
+.section_pub {
+    background-color: var(--color-background4);
+    border-top: 2px solid var(--bouton-border1);
+    border-bottom: 2px solid var(--bouton-border1);
+    color: var(--couleur-titre2);
+    width: 100%;
+    padding: 5px;
+}
+
+.section_pub .ad-banner .ad-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    gap: 20px;
+    animation: ruban_pub 12S linear infinite;
+}
+
+
+/*carousel*/
+.section_carousel .carousel-item {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+}
+
+.section_carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+/*Pub sur produits*/
+
+
+
+/*pub sur service*/
+.section_service .sous_section_service div {
+    height: 600px;
+    width: 400px;
+    border: 1px solid black;
+}
+
+.section_service .sous_section_service {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+
+}
+
+.parie_publicitaire {
+    background-color: var(--color-background2);
+    color:var(--couleur-titre2);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+
+
+/*pub sur partie orientation*/
+
+
+
+/*Nos partenaires*/
+.footer {
+    background-color: var(--color-background4);
+    width: 100%;
+    height: 250px;
+    color: var(--couleur-titre2);
+    padding: 25px;
+}
+
+.sous_sections_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sous_partie_lien {
+    height: 100%;
+    width: 50%;
+}
+
+.sous_partie_lien img {
+    height: 100px;
+}
+
+.sous_partie_contact {
+    height: 100%;
+    width: 50%;
+    background-color: var(--color-background3);
+}
+
+.class_lien {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+}
+
+.part_bar nav a {
+    text-decoration: none;
+    color: var(--couleur-lien2);
+    font-size: 1.5em;
+}
+
+.part_bar nav li:hover a {
+    color: var(--couleur-lien3);
+}
+
+.part_bar nav li:hover {
+    border-left: 1px solid var(--bouton-border1);
+    border-right: 1px solid var(--bouton-border1);
+}
+
+.part_bar nav li {
+    border-left: 1px solid var(--bouton-border2);
+    border-right: 1px solid var(--bouton-border2);
+    padding: 5px;
+}
+
+.part_bar nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.part_bar {
+    margin-top: 10px;
+}
+
+
+
+

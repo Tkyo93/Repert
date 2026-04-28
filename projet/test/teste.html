@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bandeau Publicitaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Bandeau publicitaire -->
+    <div class="ad-banner">
+        <div class="ad-track">
+            <!-- Contenu répété pour effet infini -->
+            <div class="ad-item">🔥 Promo -50%</div>
+            <div class="ad-item">🚚 Livraison gratuite</div>
+            <div class="ad-item">💳 Paiement sécurisé</div>
+            <div class="ad-item">⭐ +10 000 clients satisfaits</div>
+
+            <!-- DUPLICATION (important pour boucle fluide) -->
+            <div class="ad-item">🔥 Promo -50%</div>
+            <div class="ad-item">🚚 Livraison gratuite</div>
+            <div class="ad-item">💳 Paiement sécurisé</div>
+            <div class="ad-item">⭐ +10 000 clients satisfaits</div>
+        </div>
+    </div>
+
+
+    <section class="section_carousel">
+        <form>
+            <input type="radio" name="fancy" autofocus value="clubs" id="clubs" />
+            <input type="radio" name="fancy" value="hearts" id="hearts" />
+            <input type="radio" name="fancy" value="spades" id="spades" />
+            <input type="radio" name="fancy" value="diamonds" id="diamonds" />
+
+            <label for="clubs">&#9827; Clubs</label>
+            <label for="hearts">&#9829; Hearts</label>
+            <label for="spades">&#9824; Spades</label>
+            <label for="diamonds">&#9830; Diamonds</label>
+
+            <div class="keys">Use left and right keys to navigate</div>
+        </form>
+    </section>
+
+
+
+    <div class="carousel">
+        <button id="prev" class="btn">&#10096;</button>
+        <button id="next" class="btn">&#10097;</button>
+        <ul>
+            <li class="img_car"><img src="Assets/Img/img_bg/bienvenus.jpg" alt="img-carousel"></li>
+            <li class="img_car"><img src="Assets/Img/img_bg/anglais.jpg" alt="img-carousel"></li>
+            <li class="img_car"><img src="Assets/Img/img_bg/data.jpg" alt="img-carousel"></li>
+            <li class="img_car"><img src="Assets/Img/img_bg/fourni.jpg" alt="img-carousel"></li>
+            <!-- <li class="img_car" class="active"><img src="Assets/Img/img_bg/fourniture.jpg" alt="img-carousel"></li> -->
+            <li class="img_car"><img src="Assets/Img/img_bg/langues.jpg" alt="img-carousel"></li>
+            <li class="img_car"><img src="Assets/Img/img_bg/programation.jpg" alt="img-carousel"></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
