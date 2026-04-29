@@ -32,15 +32,15 @@
     --couleur-lien3: #FFB501;
 }
 
-/* @keyframes transition_backgrond {
+@keyframes transition_backgrond {
     0% {
-        background-image: url("Assets/Img/img_bg/img background.jpg");
+        background-image: url("../Assets/Img/img_bg/img background.jpg");
     }
 
     50% {
-        background-image: url("Assets/Img/img_bg/img_background.jpg");
+        background-image: url("../Assets/Img/img_bg/img_background.jpg");
     }
-} */
+}
 
 @keyframes ruban_pub {
     from {
@@ -54,23 +54,28 @@
 
 
 /*nav-bar*/
+#flouter {
+    /* background-color: rgb(0, 0, 0 0.1);> */
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
 .section_navbar {
     display: flex;
     flex-direction: column;
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    /* background-image: url("Img/img_bg/img_background.jpg"); */
+    animation: transition_backgrond;
+    background-image: url("../Img/img_bg/img\ background.jpg");
+    background-size:cover ;
+    background-repeat: no-repeat;
 }
 
-.section_navbar .sous_class_contact img {
-    height: 30px;
-    text-decoration: none;
-}
-
-.section_navbar .Partie_logo .sous_class_contact {
-    gap: 25px;
-}
 
 .section_navbar .Partie_logo .sous_class_logo {
     display: flex;
@@ -86,7 +91,7 @@
 
 .section_navbar .Partie_logo .contacter:hover {
     background-color: var(--color-background2);
-    border: 2px solid var(--bouton-border3);
+    border: 2px solid var(--bouton-border2);
 }
 
 .section_navbar .contacter:hover a {
@@ -98,17 +103,20 @@
     text-decoration: none;
 }
 
-.sous_class_contact i {
-    font-size: 25px;
-    gap: 15px;
+#sous_class_contact i {
+    font-size: 30px;
 }
 
-.sous_class_contact .sous_class_contact {
+#sous_class_contact {
     gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .section_navbar .sous_class_logo h1 {
-    color: c;
+    color: var(--couleur-titre3);
 }
 
 .section_navbar .sous_class_logo img {
@@ -130,13 +138,11 @@
     gap: 20px;
 }
 
-.partie_navbar nav li {
-    padding: 5px;
-}
 
 .partie_navbar nav li:hover{
-    border-top: 1px solid var(--bouton-border1);
-    border-bottom: 1px solid  var(--bouton-border1);
+    border-top: 2px solid var(--bouton-border2);
+    border-bottom: 2px solid  var(--bouton-border2);
+    border-radius: 10px;
     color: var(--couleur-lien3);
 }
 
@@ -151,11 +157,7 @@
     font-size: 1.5em;
 }
 
-
-
-
-
-/*Partie Publicitaire*/
+/************Partie Publicitaire***************/
 .section_pub {
     background-color: var(--color-background4);
     border-top: 2px solid var(--bouton-border1);
@@ -191,21 +193,69 @@
 
 
 
-/*pub sur service*/
-.section_service .sous_section_service div {
+/**************pub sur service***************/
+.section_service .sous_section_service .principal {
     height: 600px;
     width: 400px;
     border: 1px solid black;
+    border-radius: 15px;
 }
 
-.section_service .sous_section_service {
+.section_service .principal h1 {
+    font-size: 20px;
+}
+
+.section_service .principal h2 {
+    font-size: 20px;
+}
+
+.section_service .principal a {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--bouton-border1);
+    border-radius: 5px;
+    background-color: var(--color-background2);
+    color: var(--couleur-titre3);
+    text-decoration: none;
+}
+
+.section_service .principal a:hover {
+    background-color: var(--color-background2);
+    border: var(--bouton-border2);
+}
+
+.section_service {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 25px;
     padding: 15px;
+}
 
+.sous_section_service .haut {
+    height: 75%;
+    width: 100%;
+    color: var(--couleur-titre2);
+    background-image:url("../Img/img_bg/programation.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+
+}
+
+.sous_section_service .bas {
+    width: 100%;    
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .parie_publicitaire {
@@ -214,8 +264,9 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 30px;
 }
+
 
 
 
