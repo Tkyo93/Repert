@@ -7,7 +7,7 @@
 :root {
     /*couleur background*/
     --color-background1: #DBDA4D;
-    --color-background2: #FFB501;
+    --color-background2: #ffff01;
     --color-background3: #e0e0e0;
     --color-background4: #000000;
 
@@ -22,40 +22,59 @@
     /*couleur sous-titre*/
 
     /*couleur Bouton*/
-    --bouton-border1: #FFB501;
+    --bouton-border1: #ffb700;
     --bouton-border2: #ffffff;
     --bouton-border3: #000000;
-    
+
     /*couleur lien*/
     --couleur-lien1: #000000;
     --couleur-lien2: #ffffffff;
     --couleur-lien3: #FFB501;
 }
 
-@keyframes transition_backgrond {
+@keyframes back {
     0% {
-        background-image: url("../Assets/Img/img_bg/img background.jpg");
+        background-image: url("../Img/img_bg/img background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
-    50% {
-        background-image: url("../Assets/Img/img_bg/img_background.jpg");
+    100% {
+        background-image: url("../Img/img_bg/img_background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
 @keyframes ruban_pub {
-    from {
-        transform: translateX(0);
+    0% {
+        transform: translateX(-5%);
     }
 
-    to {
-        transform: translateX(-50%);
+    100% {
+        transform: rotateX(100%);
     }
 }
 
+/* @keyframes suite {
+    from { 
+        color: white;
+        transition: 5s;
+        transition-duration: 2s;
+    }
+
+    to {
+        color: black;
+        transition: 5s;
+        transition-duration: 2s;
+    }
+} */
 
 /*nav-bar*/
-#flouter {
-    /* background-color: rgb(0, 0, 0 0.1);> */
+.flouter {
+    animation: back 65s infinite;
 }
 
 header {
@@ -70,12 +89,8 @@ header {
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    animation: transition_backgrond;
-    background-image: url("../Img/img_bg/img\ background.jpg");
-    background-size:cover ;
-    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.30);
 }
-
 
 .section_navbar .Partie_logo .sous_class_logo {
     display: flex;
@@ -85,21 +100,29 @@ header {
 
 .section_navbar .Partie_logo .contacter {
     padding: 0.5rem 1.2rem;
-    border: 1px solid var(--bouton-border1);
+    border: 5px solid white;
     border-radius: 5px;
+    transition-property: background-color;
+    transition: all 0.3s ease;
+    background-color: rgb(175, 173, 173);
 }
 
 .section_navbar .Partie_logo .contacter:hover {
-    background-color: var(--color-background2);
-    border: 2px solid var(--bouton-border2);
+    background-color: var(--color-background3);
+    border: 5px solid white;
+    transform: scale(1.01);
+    box-shadow:
+        0 5px 10px rgb(255, 251, 0),
+        0 5px 10px rgb(255, 251, 0);
+    cursor: pointer;
 }
 
 .section_navbar .contacter:hover a {
-    color: var(--couleur-lien2);
+    color: var(--couleur-lien1);
 }
 
 .section_navbar .contacter a {
-    color: var(--couleur-lien1);
+    color: var(--couleur-lien2);
     text-decoration: none;
 }
 
@@ -107,12 +130,35 @@ header {
     font-size: 30px;
 }
 
+#sous_class_contact div {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background-color: rgb(175, 173, 173);
+    transition: 0.4s ease;
+}
+
+#sous_class_contact div:hover { 
+    background-color: white;
+
+    transform: scale(1.1);
+    box-shadow:
+        0 5px 10px rgb(255, 251, 0),
+        0 5px 10px rgb(255, 251, 0);
+    cursor: pointer;
+}
+
 #sous_class_contact {
     gap: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    s
 }
 
 .section_navbar .sous_class_logo h1 {
@@ -138,23 +184,21 @@ header {
     gap: 20px;
 }
 
-
-.partie_navbar nav li:hover{
-    border-top: 2px solid var(--bouton-border2);
-    border-bottom: 2px solid  var(--bouton-border2);
+.partie_navbar nav li {    
     border-radius: 10px;
-    color: var(--couleur-lien3);
+    border-bottom: 1px solid white;
 }
 
-.partie_navbar nav li:hover a{
-    color: var(--couleur-lien3);
+.partie_navbar ul a:hover {
+
 }
 
 .partie_navbar ul a {
     list-style-type: none;
     text-decoration: none;
-    color: var(--couleur-lien1);
+    color: var(--couleur-lien2);
     font-size: 1.5em;
+    transition: 1s;
 }
 
 /************Partie Publicitaire***************/
@@ -173,30 +217,101 @@ header {
     align-items: center;
     width: max-content;
     gap: 20px;
-    animation: ruban_pub 12S linear infinite;
+    animation: ruban_pub 10S linear infinite;
 }
 
 
 /*carousel*/
-.section_carousel .carousel-item {
+.section_carousel {
     width: 100%;
-    height: 85vh;
-    object-fit: cover;
+    height: 100%;
+    background-color: red;
 }
 
-.section_carousel img {
+.section_carousel .carousel-item img {
     width: 100%;
     height: 100%;
 }
 
+.carouselExampleSlidesOnly2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.carouselExampleSlidesOnly2 div img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: none;
+    border-radius: 15px;
+}
+
+#mem {
+    height: 200px;
+    width: 200px;
+}
+
+.memm {
+    margin-top: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+.carouselExampleSlidesOnly2 #lien {
+    margin-bottom: 15px;
+}
+
+.carouselExampleSlidesOnly2 #lien h1 {
+    font-size: 1.0rem;
+    text-align: center;
+}
+
+.carouselExampleSlidesOnly2 .h1 h1 {
+    font-size: 30px;
+    color: rgb(250, 250, 148);
+}
+
+.carouselExampleSlidesOnly2 #lien .partenaires {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.partenaires .float {
+    padding: 15px;
+    border-radius: 1px;
+    background: white;
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.1),
+        0 5px 10px rgba(0, 0, 0, 0.2);
+
+    height: 300px;
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.partenaires .float:hover {
+    box-shadow:
+        0 5px 10px rgb(255, 251, 0);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
 /*Pub sur produits*/
-
-
 
 /**************pub sur service***************/
 .section_service .sous_section_service .principal {
-    height: 600px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     border: 1px solid black;
     border-radius: 15px;
 }
@@ -205,8 +320,19 @@ header {
     font-size: 20px;
 }
 
-.section_service .principal h2 {
+.section_service .principal h2,
+p {
     font-size: 20px;
+    text-align: justify;
+}
+
+.section_service .principal button {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--bouton-border1);
+    border-radius: 5px;
+    background-color: var(--color-background2);
+    color: var(--couleur-titre3);
+    text-decoration: none;
 }
 
 .section_service .principal a {
@@ -229,15 +355,37 @@ header {
     align-items: center;
     justify-content: center;
     gap: 25px;
-    padding: 15px;
+    padding: 30px 150px 30px 150px;
 }
 
-.sous_section_service .haut {
+.sous_section_service {
+    transition: transform 0.25s ease-in-out;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.1),
+        0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sous_section_service:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 25px 40px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+.sous_section_service .haut,
+.haut1 {
     height: 75%;
     width: 100%;
     color: var(--couleur-titre2);
-    background-image:url("../Img/img_bg/programation.jpg");
     background-position: center;
+    background-image: url("../Img/img_bg/programation.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 15px;
@@ -245,26 +393,154 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
-
 }
 
-.sous_section_service .bas {
-    width: 100%;    
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.sous_section_service .haut2 {
+    background-image: url("../Img/img_bg/programation.jpg");
+}
+
+.sous_section_service .haut3 {
+    background-image: url("../Img/img_bg/programation.jpg");
+}
+
+.sous_section_service .haut5 {
+    background-image: url("../Img/img_bg/programation.jpg");
+}
+
+.sous_section_service .haut6 {
+    background-image: url("../Img/img_bg/programation.jpg");
+}
+
+.sous_section_service .haut7 {
+    background-image: url("../Img/img_bg/programation.jpg");
 }
 
 .parie_publicitaire {
-    background-color: var(--color-background2);
-    color:var(--couleur-titre2);
-    display:flex;
+    background-color: rgb(255, 255, 255, 0.5);
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    width: 100%;
 }
 
-/*Nos partenaires*/
+/* produits */
+.produits .list_produits div {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.produits .list_produits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* .produits .list_produits .div {} */
+
+/********Recrutement********/
+.recrutement {
+    height: 500px;
+    width: 100%;
+}
+
+/* footer */
+footer {
+    background-image: radial-gradient(circle at 99% 33%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 37%, transparent 37%, transparent 100%), radial-gradient(circle at 46% 16%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 43%, transparent 43%, transparent 100%), radial-gradient(circle at 99% 25%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 22%, transparent 22%, transparent 100%), radial-gradient(circle at 57% 88%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 86%, transparent 86%, transparent 100%), radial-gradient(circle at 82% 78%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 22%, transparent 22%, transparent 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
+    color: var(--couleur-titre2);
+    height: 590px;
+    padding: 15px;
+}
+
+.footer_part2 {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+    padding: 10px 10px 10px 10px;
+}
+
+.footer_part2 form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer_part2 ul {
+    list-style-type: none;
+}
+
+.aigle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.aigle p {
+    text-align: justify;
+}
+
+.footer_part1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    gap: 20px;
+}
+
+.footer_part1 iframe {
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    box-shadow:
+        0 5px 10px rgba(255, 255, 255, 0.1),
+        0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+.aigle iframe:hover {
+    transform: scale(1.01);
+    box-shadow:
+        0 5px 10px rgb(255, 251, 0),
+        0 5px 10px rgb(255, 251, 0);
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex img {
+    height: 100px;
+}
+
+footer h1 {
+    font-size: 30px;
+    color: rgb(250, 250, 148);
+}
+
+p {
+    font-size: 1.0em;
+}
+
+footer li:hover a {
+    color: var(--couleur-lien3);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--couleur-lien2);
+}
+
+body {
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
