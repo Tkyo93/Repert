@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <header id="bouton_retour">
-        <!--**************header**************-->
-        <section class="flouter">
+    <header>
+        <!-- **************header************** -->
+        <section id="retour" class="flouter">
             <div class="section_navbar">
                 <div class="Partie_logo">
                     <div id="sous_class_contact">
@@ -25,7 +25,6 @@
                                 <i class="fa-solid fa-house" style="color: rgb(0, 0, 0);"></i>
                             </a>
                         </div>
-
 
                         <div>
                             <a href="#">
@@ -73,16 +72,15 @@
             <div class="ad-banner">
                 <div class="ad-track">
                     <!-- Contenu répété pour effet infini -->
-                    <div class="ad-item">* Promo -50%</div>
-                    <div class="ad-item">* Livraison gratuite</div>
-                    <div class="ad-item">* Paiement sécurisé</div>
-                    <div class="ad-item">* +10 000 clients satisfaits</div>
+                    <div class="ad-item">#Service de Livraison</div>
+                    <div class="ad-item">#Paiement sécurisé</div>
+                    <div class="ad-item">#+10 000 clients satisfaits</div>
 
                     <!-- DUPLICATION (important pour boucle fluide) -->
-                    <div class="ad-item">* Promo -50%</div>
-                    <div class="ad-item">* Livraison gratuite</div>
-                    <div class="ad-item">* Paiement sécurisé</div>
-                    <div class="ad-item">* +10 000 clients satisfaits</div>
+                    <div class="ad-item">#Formation professionnels</div>
+                    <div class="ad-item">#Promo vacances</div>
+                    <div class="ad-item">#Service d'orientation inclu</div>
+                    <div class="ad-item">#Vente d'articles</div>
                 </div>
             </div>
         </section>
@@ -252,7 +250,7 @@
                     </div>
 
                     
-            <div class="part">
+                    <div class="part">
                         <div class="div">
                            <img src="Assets/Img/img pub/Articles informatiques/30x-zoom-5mp-ptz-camra-de-surveillance-wifi-extrieure-ctronics-camra-ip-1-2048x2048 (1).jpg"
                             alt="">
@@ -499,22 +497,18 @@
             </div>
 
         `;
-                }
+            }
 
-                else if (section === "Autres") {
-                    contenu.innerHTML = `
-                    img
-        `;
-                }
+                
+                
             }
         </script>
-
 
         <div id="container">
             <!-- Partie gauche -->
             <div class="menu">
 
-                <h1>Navigation</h1>
+                <h1>Découverte</h1>
 
                 <button onclick="changerContenu('Produits')">
                     Produits
@@ -523,15 +517,17 @@
                 <button onclick="changerContenu('Services')">
                     Services
                 </button>
-
-                <button onclick="changerContenu('Autres')">
-                    Autres
-                </button>
             </div>
 
             <!-- Partie droite -->
             <div class="contenu" id="contenu">
-                Bienvenue 😎
+                <div class="Acceuil">
+                        <div>
+                            <img src="Assets/Img/icon_logo/logo-GVAS.png" alt="logo-GVAS">
+                            <h1>GROUPE VISION D'AIGLE SERVICE</h1>
+                            <P>Spécialiser dans la vente des produits et services</P>
+                        </div>
+                    </div>
             </div>
         </div>
 
@@ -579,9 +575,6 @@
                         </div>
                     </div>
 
-                    <div class="pub">
-
-                    </div>
                 </div>
             </div>
         </section>
@@ -644,7 +637,7 @@
                                 <img src="Assets/Img/Partenaires/cvmc.png" alt="">
                             </div>
                             <div class="memm">
-                                <h1>lorem</h1>
+                                <h1>CVMC</h1>
                             </div>
                         </div>
                     </div>
@@ -653,11 +646,13 @@
         </section>
 
         <div id="foot">
-            <a href="#bouton_retour" class="bouton_retour">
+            <a href="#retour" class="bouton_retour">
                 <h1>
-                    Retour au sommet
+                    RETOUR AU SOMMET
                 </h1>
             </a>
+        </div>
+
     </main>
 
     <!-- footer -->
@@ -727,9 +722,20 @@
             </div>
 
             <form action="">
-                <label for="envoie">Envoyez votre commentaire</label>
-                <textarea name="envoie" id="envoie"></textarea>
-                <button>soumettre !</button>
+                <label for="envoie">
+                    <h1>
+                        Envoyez votre commentaire
+                    </h1>
+                </label>
+                <ul>
+                    <li>
+                        <input type="text" name="envoie" id="envoie"></input>
+                    </li>
+
+                    <li>
+                        <button>soumettre !</button>
+                    </li>
+                </ul>
             </form>
         </div>
 

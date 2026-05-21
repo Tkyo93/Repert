@@ -91,3 +91,17 @@
 .show {
   display: block;
 }
+
+.Acceuil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Acceuil div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
