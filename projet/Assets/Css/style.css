@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 :root {
@@ -104,8 +105,8 @@
 }
 
 @keyframes ruban-pub {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    20%   { transform: translateX(20%); }
+    50% { transform: translateX(0%); }
 }
 
 html {
@@ -254,17 +255,15 @@ header {
 /*ruban déroulant*/
 .ad-item {
     display: flex;
-    gap: 48px;
+    gap: 20px;
     background: black;
     animation: ruban-pub 30s linear infinite;
-    border-bottom: 3px solid yellow;
-    border-top: 3px solid yellow;
     padding: 8px;
     height: 100%;
     background: black;
     overflow: hidden;
     position: sticky;
-    width: max-content;
+    width: 100%;
 }
 
 .ad-item span {
@@ -275,7 +274,10 @@ header {
     font-weight: 500;
 }
 
-.ad-item span {
+.ad-track {
+    width: 100vw;background: black;
+    border-bottom: 3px solid yellow;
+    border-top: 3px solid yellow;
 }
 
 
