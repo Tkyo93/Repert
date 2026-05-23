@@ -32,6 +32,8 @@
     --couleur-lien3: #FFB501;
 }
 
+
+
 @keyframes back {
     0% {
         background-image: url("../Img/img_bg/img background.jpg");
@@ -101,14 +103,9 @@
     }
 }
 
-@keyframes ruban_pub {
-    20% {
-        transform: translateX(20%);
-    }
-
-    50% {
-        transform: translateX(30%);
-    }
+@keyframes ruban-pub {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 html {
@@ -254,24 +251,33 @@ header {
     transition: 1s;
 }
 
-/*Partie Publicitaire*/
-.section_pub {
-    background-color: var(--color-background4);
-    border-top: 4px solid yellow;
-    border-bottom: 4px solid yellow;
-    color: var(--couleur-titre2);
-    width: 100%;
-    padding: 5px;
+/*ruban déroulant*/
+.ad-item {
+    display: flex;
+    gap: 48px;
+    background: black;
+    animation: ruban-pub 30s linear infinite;
+    border-bottom: 3px solid yellow;
+    border-top: 3px solid yellow;
+    padding: 8px;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    position: sticky;
+    width: max-content;
 }
 
-.section_pub .ad-banner .ad-track {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: max-content;
-    gap: 20px;
-    animation: ruban_pub 20s linear infinite;
+.ad-item span {
+    color: var(--couleur-lien2);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    font-weight: 500;
 }
+
+.ad-item span {
+}
+
 
 /*carousel*/
 #classeur {
@@ -537,11 +543,62 @@ button {
 /*repartitions des besoins*/
 /*pub sur service*/
 .section_service .sous_section_service .principal {
-    height: 300px;
-    width: 100%;
+    height: 600px;
+    width: 390px;
     border: 1px solid black;
-    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
+
+ /* height: 600px;
+    width: 400px;
+    border-radius: 15px;
+    border: 2px solid yellow;
+    transition: transform 0.25s ease-in-out;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.1),
+        0 15px 30px rgba(0, 0, 0, 0.2);
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+}
+
+.produits .list_produits .part:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 25px 40px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+.produits .list_produits .part .dav {
+    height: auto%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.produits .list_produits .part .div {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 
 .section_service .principal h1 {
     font-size: 20px;
@@ -703,27 +760,6 @@ p {
     align-items: center;
 }
 
-/* .produits .dav a {
-    padding: 0.5rem 1.2rem;
-    border: 5px solid white;
-    border-radius: 5px;
-    transition-property: background-color;
-    transition: all 0.3s ease;
-    background-color: rgb(175, 173, 173);
-    text-decoration: none;
-    color: var(--couleur-lien1);
-}
-
-.produits .dav a:hover {
-    background-color: var(--color-background3);
-    border: 5px solid white;
-    transform: scale(1.01);
-    box-shadow:
-        0 5px 10px rgb(255, 251, 0),
-        0 5px 10px rgb(255, 251, 0);
-    cursor: pointer;
-} */
-
 .produits .dav h1 {
     font-size: 20px;
 }
@@ -763,8 +799,8 @@ p {
 }
 
 .redirections .bg .p_bas {
-    height: 100%;
-    width: 600px;
+    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -780,8 +816,13 @@ h2 {
     font-size: 15px;
 }
 
+.redirections .p_bas p {
+    width: auto;
+}
+
+
 .redirections .bg {
-    height: 460px;
+    height: 480px;
     width: 400px;
     padding: 25px;
     border-radius: 1px;
@@ -843,7 +884,7 @@ h2 {
 
 
 .partie_recrutement .central {
-    height: 490px;
+    height: 580px;
     width: 100%;
     display: flex;
     justify-content: center;
